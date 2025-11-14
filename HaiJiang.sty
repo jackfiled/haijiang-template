@@ -1,0 +1,103 @@
+% First configure the margin.
+\RequirePackage[paper=a4paper,left=0.6in,right=0.6in,top=0.75in,bottom=0.75in]{geometry}
+% And Prof.Jiang is asked to set 0.6cm/0.25 space between the two columns in the center of page.
+\setlength{\columnsep}{0.25in}
+
+% Fonts
+\RequirePackage{fontspec}
+\setmainfont{Times New Roman}
+\RequirePackage{setspace}
+
+% Disable all headers as Prof.Jiang says that the page number will be inserted by the publisher.
+\pagestyle{empty}
+
+% Title and author.
+% Abstract and keywords.
+\newcommand{\cp@title}{}
+\newcommand{\cp@authors}{}
+\newcommand{\cp@affils}{}
+\newcommand{\cp@abstract}{}
+\newcommand{\cp@keywords}{}
+
+\newcommand{\TitleAndAuthor}[3]{
+  \renewcommand{\cp@title}{#1}
+  \renewcommand{\cp@authors}{#2}
+  \renewcommand{\cp@affils}{#3}
+}
+
+\newcommand{\Abstract}[1]{
+  \renewcommand{\cp@abstract}{#1}
+}
+
+\newcommand{\Keywords}[1]{
+  \renewcommand{\cp@keywords}{#1}
+}
+
+\newcommand{\InsertHeader}{
+  \singlespacing
+  \twocolumn[
+    \begin{center}
+      \fontsize{20}{24}\selectfont\bfseries
+      \cp@title
+    \end{center}
+    \begin{center}
+      \fontsize{11}{13}\selectfont
+      {
+      \vspace{1em}
+      \bfseries
+      \cp@authors
+      
+      }
+      \cp@affils
+    \end{center}
+    \vspace{1em}
+  ]
+  
+  \noindent\textbf{Abstract} -
+  \fontsize{10}{12}\selectfont\textit{\cp@abstract}
+
+  \noindent\textbf{Keywords:} 
+  \fontsize{10}{12}\selectfont\cp@keywords
+}
+
+% Paragraph indent and space.
+\RequirePackage{indentfirst}
+% Prof.Jiang use tab to make indent.
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{12pt}
+
+% Link
+\RequirePackage{hyperref}
+\hypersetup{
+hidelinks,
+colorlinks=true,
+allcolors=blue,
+pdfstartview=Fit,
+breaklinks=true
+}
+
+% Reference
+\newcommand{\PrintBibliography}[1]{
+  \vspace{-12pt}
+  \renewcommand{\refname}{}
+  \bibliographystyle{IEEEtran}
+  \bibliography{#1}
+}
+
+% Section title
+\RequirePackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{14}{16}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{10}{12}\bfseries}{\thesubsubsection}{1em}{}
+% As we have set parskip 12pt, so the bottom skip set value should be real value minus 12pt.
+\titlespacing{\section}{0pt}{0pt}{-6pt}
+\titlespacing{\subsection}{0pt}{0pt}{-6pt}
+\titlespacing{\subsubsection}{0pt}{3pt}{-9pt}
+
+\endinput
+
+
