@@ -8,6 +8,8 @@ So I design this template. This template tries to provide the same format as the
 
 ## Instructions
 
+This repo comes with one style file (Haijiang.sty) and two LaTex files (main.tex and template.tex). The `Haijiang.sty` and the `main.tex` are the minimum files you need to write a paper. The `template.tex` can be used to generate the `template.pdf` for your reference.
+
 First, four macros are defined to print the header part of the survey. The title, authors, and affiliations should be defined using the `TitleAndAuthor` macro. The abstract and keywords should be defined using the `Abstract` and `Keywords` macros, respectively. After starting the document, a `InsertHeader` macro should be invoked to render the pre-defined part.
 
 Second, write the main text of the paper using the normal LaTeX tools. The paragraph skip, title skip, and lineskip are all well-tuned.
