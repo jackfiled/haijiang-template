@@ -79,6 +79,11 @@ pdfstartview=Fit,
 breaklinks=true
 }
 
+% url
+\RequirePackage{url}
+\urlstyle{same} 
+\renewcommand{\UrlBreaks}{\do\/\do-\do.\do:\do_} 
+
 % Reference
 \newcommand{\PrintBibliography}[1]{
   \vspace{-12pt}
