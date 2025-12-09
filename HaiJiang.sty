@@ -33,32 +33,35 @@
   \renewcommand{\cp@keywords}{#1}
 }
 
+
+\hyphenation{per-mu-ta-tion vi-de par-ti-tioned} 
+
 \newcommand{\InsertHeader}{
   \singlespacing
   \twocolumn[
     \begin{center}
-      \fontsize{20}{24}\selectfont\bfseries
-      \cp@title
+      \fontsize{20}{24}\selectfont\bfseries \cp@title
     \end{center}
     \begin{center}
       \fontsize{11}{13}\selectfont
-      {
       \vspace{1em}
-      \bfseries
-      \cp@authors
-      
-      }
-      \cp@affils
+      \bfseries \cp@authors\\
+      \normalfont \cp@affils
     \end{center}
     \vspace{1em}
   ]
   
-  \noindent\textbf{Abstract} -
-  \fontsize{10}{12}\selectfont\textit{\cp@abstract}
-
-  \noindent\textbf{Keywords:} 
-  \fontsize{10}{12}\selectfont\cp@keywords
+  \noindent\textbf{Abstract} - \fontsize{10}{12}\selectfont\textit{\cp@abstract}
+  \par 
+  
+  \vspace{0.5em}
+  \noindent\textbf{Keywords:} \fontsize{10}{12}\selectfont\cp@keywords
+  \par
+  
+  \vspace{1em}
+  \sloppy
 }
+
 
 % Paragraph indent and space.
 \RequirePackage{indentfirst}
