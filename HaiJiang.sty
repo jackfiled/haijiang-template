@@ -33,9 +33,6 @@
   \renewcommand{\cp@keywords}{#1}
 }
 
-
-\hyphenation{per-mu-ta-tion vi-de par-ti-tioned} 
-
 \newcommand{\InsertHeader}{
   \singlespacing
   \twocolumn[
@@ -68,6 +65,18 @@
 % Prof.Jiang use tab to make indent.
 \setlength{\parindent}{0.25in}
 \setlength{\parskip}{12pt}
+
+\RequirePackage[inline]{enumitem}
+\RequirePackage{pifont}
+
+\setlist[enumerate,1]{label=(\arabic*)}
+\setlist[enumerate,2]{label=\circlednumber{\arabic*}}
+\setlist[enumerate,3]{label=\Alph*.}
+\setlist[enumerate,4]{label=\alph*.}
+
+% Uncomment the two lines below if you want an list environment to share the same indent
+% with a paragraph and no extra blank before, in or after the list.
+\setlist{leftmargin=4pt, itemindent=2em, itemsep=3pt, topsep=-8pt, partopsep=0pt, parsep=0pt, labelindent=2pt}
 
 % Link
 \RequirePackage{hyperref}
