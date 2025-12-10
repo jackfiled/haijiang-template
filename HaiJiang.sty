@@ -69,6 +69,10 @@
 \setlength{\parindent}{0.25in}
 \setlength{\parskip}{12pt}
 
+% Reduce spacing before list environments to avoid excessive vertical space
+\RequirePackage{enumitem}
+\setlist{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=6pt}
+
 % Link
 \RequirePackage{hyperref}
 \hypersetup{
