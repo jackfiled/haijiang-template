@@ -33,9 +33,6 @@
   \renewcommand{\cp@keywords}{#1}
 }
 
-
-\hyphenation{per-mu-ta-tion vi-de par-ti-tioned} 
-
 \newcommand{\InsertHeader}{
   \singlespacing
   \twocolumn[
@@ -69,9 +66,10 @@
 \setlength{\parindent}{0.25in}
 \setlength{\parskip}{12pt}
 
-% Reduce spacing before list environments to avoid excessive vertical space
-\RequirePackage{enumitem}
-\setlist{topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=6pt}
+% Uncomment the two lines below if you want an list environment to share the same indent
+% with a paragraph and no extra blank before, in or after the list.
+\setlist[itemize]{leftmargin=4pt,itemindent=2em,itemsep=3pt,topsep=0pt, labelindent=2pt}
+\setlist[enumerate]{leftmargin=4pt,itemindent=2em,itemsep=3pt,topsep=0pt, labelindent=2pt}
 
 % Link
 \RequirePackage{hyperref}
